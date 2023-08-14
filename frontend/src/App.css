@@ -1,0 +1,164 @@
+.active {
+  color: brown !important;
+}
+.nav-tog{
+  filter: invert(100%);
+}
+
+.foodgrid {
+  display: grid;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
+}
+
+.g-Item {
+  box-shadow: 3px 3px 3px 2px;
+  /* border-radius: 10px; */
+
+}
+
+/* .f-i-name{
+  padding: 10px;
+  height: 60px;
+} */
+.f-i-img {
+  /* box-shadow: 2px 2px 2px 2px; */
+  height: 300px;
+  width: 100%;
+}
+.modal-img{
+  height: 400px;
+  width: 100%;
+}
+
+
+.ycText {
+  width: 100%;
+}
+
+
+.btn {
+  /* border-radius: 2px !important; */
+  width: 100%;
+}
+
+.cartMainsec {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+@media only screen and (max-width:770px) {
+  .cartMainsec {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+}
+.togp-btn{
+  border:none;
+  background-color: transparent;
+}
+
+table {
+  width: 100%;
+}
+
+.view-card {
+  width: 100%;
+  max-width: 450px;
+}
+
+.mc-height {
+  height: 440px;
+}
+
+.cc-height {
+  height: 400px;
+
+
+}
+
+.cart-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  position: absolute;
+  height: 25px;
+  width: 55px;
+  border: 2px solid black;
+  font-weight: 900;
+
+}
+
+.reduceNo {
+  height: 23px;
+  width: 23px;
+  border: none !important;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-weight: 900;
+  font-size: 25px;
+}
+
+.Modal-wrapper {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: rgb(163, 159, 159, 0.9);
+}
+.Modal-container{
+  
+  z-index: 5;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #fff;
+  width: 90%;
+  max-width: 400px;
+  height: 400px;
+}
+.modal-katta{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  font-size: 20px;
+  position: fixed;
+  top:0;
+  right: 0;
+  font-weight: 900;
+}
+.SignUp-Modal-Container{
+  z-index: 5;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #fff;
+  width: 90%;
+  max-width: 500px;
+  height: fit-content;
+  overflow-y: scroll;
+  
+}
+.Login-Modal-Container{
+  z-index: 5;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #fff;
+  width: 90%;
+  max-width: 500px;
+  height: 600px;
+  
+}
