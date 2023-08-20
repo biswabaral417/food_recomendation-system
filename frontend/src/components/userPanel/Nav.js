@@ -1,13 +1,13 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import SharedPropsContext from '../contexts/SharedPropsContext';
+import CombinedContext from '../../contexts/CombinedContext';
 import { useContext } from 'react';
 
 
 
 
-export default function Nav({ openLoginModal }) {
-    const { mode, toggleMode, itemSearch, userlogInfo, logout,logBtntxt } = useContext(SharedPropsContext);
+export default function Nav() {
+    const { mode, toggleMode, itemSearch, logInOutBtnFunc, logBtntxt } = useContext(CombinedContext);
     return (
 
         <div>
@@ -32,6 +32,7 @@ export default function Nav({ openLoginModal }) {
                                 <NavLink className={`nav-link text-${mode === "light" ? "dark" : "light"} mx-2`} to="/about">About</NavLink>
                             </li>
                         </ul>
+                        
                         <div className="form-check form-switch m-1 ">
                             <input className="form-check-input d-block" type="checkbox" onClick={toggleMode} role="switch" id="flexSwitchCheckDefault" />
                             <label className={`form-check-label text-${mode === "light" ? "dark" : "light"}`} htmlFor="flexSwitchCheckDefault">dark mode</label>
@@ -42,7 +43,7 @@ export default function Nav({ openLoginModal }) {
                             </Link>
                         </form>
                         <div >
-                            <button id="userAcess" className='btn btn-primary m-1' onClick={userlogInfo !== true ? openLoginModal : logout}>{logBtntxt}</button>
+                            <button id="userAcess" className='btn btn-primary m-1' onClick={logInOutBtnFunc}>{logBtntxt}</button>
                         </div>
                     </div>
                 </div>

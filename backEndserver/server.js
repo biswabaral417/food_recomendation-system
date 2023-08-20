@@ -31,7 +31,7 @@ app.use(require('./router/foods'))//give foods data
 
 
 
-//middleware 
+//middleware
 const middleware = (req, res, next) => {
   console.log("middleware");
   next();

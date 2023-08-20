@@ -1,9 +1,9 @@
 import React from 'react'
 import { useContext } from 'react'
-import SharedPropsContext from '../contexts/SharedPropsContext'
+import CombinedContext from '../../contexts/CombinedContext'
 
 export default function Modal() {
-    const { itemToView,closeModal,ucart,mode,reduceItem,addToCart } = useContext(SharedPropsContext)
+    const { itemToView,closeModal,ucart,mode,reduceItem,addToCart } = useContext(CombinedContext)
     const foodQuantityInCart = ucart.filter(item => item.itemName === itemToView.itemName).length;
     return (
         <>
@@ -12,9 +12,9 @@ export default function Modal() {
         <div className={`bg-${mode} rounded`}>
             {foodQuantityInCart > 0 && (
                 <span className="cart-indicator rounded-pill bg-primary text-white m-3">
-                    <bold className='mx-2'>
+                    <b className='mx-2'>
                         {foodQuantityInCart}
-                    </bold>
+                    </b>
                     <button onClick={() => reduceItem(itemToView)} className='reduceNo text-white rounded-circle bg-primary'>-</button>
                 </span>
             )}

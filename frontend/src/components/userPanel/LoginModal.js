@@ -1,51 +1,19 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
+import CombinedContext from '../../contexts/CombinedContext';
 
-export default function LoginModal({ closeLoginModal, openSignUpModal }) {
+export default function LoginModal() {
+    const { userEmail, setUserEmail, userPassword, setUserPassword, PostData_Login, closeLoginModal, openSignUpModal } = useContext(CombinedContext)
 
     const togPass = () => {
         if (document.getElementById('InputPassword').type === "password") {
             document.getElementById('InputPassword').setAttribute("type", "text");
-            document.querySelector('.togp-btn').querySelector("img").setAttribute("src", "../images/eye-slash-fill.svg")
+            document.querySelector('.togp-btn').querySelector("img").setAttribute("src", "../images/eye-fill.svg")
         }
         else {
             document.getElementById('InputPassword').setAttribute("type", "password");
-            document.querySelector('.togp-btn').querySelector("img").setAttribute("src", "../images/eye-fill.svg")
+            document.querySelector('.togp-btn').querySelector("img").setAttribute("src", "../images/eye-slash-fill.svg")
         }
     }
-    const [userEmail, setUserEmail] = useState("");
-    const [userPassword, setUserPassword] = useState("");
-
-
-
-
-    const PostData_Login = async (e) => {
-        e.preventDefault()
-        // console.log((document.getElementById('flexCheckChecked').checked))
-
-        const res = await fetch("/login", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({userEmail, userPassword})
-        });
-        const data = await res.json();
-        console.log(res.json);
-        if (res.status === 422 || !data) {
-            window.alert(data.error);
-            
-        }
-        else if (res.status === 201) {
-            window.alert(data.sucess);
-            console.log(data.sucess);
-            closeLoginModal();
-        }
-        else {
-            window.alert("connection error")
-        }
-
-    }
-
 
 
 
@@ -61,12 +29,12 @@ export default function LoginModal({ closeLoginModal, openSignUpModal }) {
                         <div>
                             <div className="mb-3">
                                 <label htmlFor="InputEmail" className="form-label text-black">Email address</label>
-                                <input type="email" className="form-control" id="InputEmail" onChange={(e)=>setUserEmail(e.target.value)} value={userEmail} aria-describedby="emailHelp" />
+                                <input type="email" className="form-control" id="InputEmail" onChange={(e) => setUserEmail(e.target.value)} value={userEmail} aria-describedby="emailHelp" />
                             </div>
                             <div className="mb-3">
-                                <label htmlFor="exampleInputPassword1"  className="form-label text-black">Password</label>
+                                <label htmlFor="exampleInputPassword1" className="form-label text-black">Password</label>
                                 <div className='d-flex'>
-                                    <input type="password"  onChange={(e)=>setUserPassword(e.target.value)} value={userPassword} className="form-control" id="InputPassword" />
+                                    <input type="password" onChange={(e) => setUserPassword(e.target.value)} value={userPassword} className="form-control" id="InputPassword" />
                                     <button className='d-flex togp-btn mx-2' onClick={() => togPass()} type='button'><img src="../images/eye-fill.svg" alt="" /></button>
                                 </div>
                             </div>

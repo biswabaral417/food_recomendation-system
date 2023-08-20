@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import SharedPropsContext from '../contexts/SharedPropsContext';
+import CombinedContext from '../../contexts/CombinedContext';
 import Card from './Card';
 
 export default function Foods() {
-    const { jsonData, mode, searchStr, viewData,itemToView, addToCart, ucart, Modal, } = useContext(SharedPropsContext);
+    const { jsonData, mode, searchStr, viewData,itemToView, addToCart, ucart, Modal, } = useContext(CombinedContext);
 
     const cartItemCounts = ucart.reduce((counts, item) => {
         counts[item.itemName] = (counts[item.itemName] || 0) + 1;

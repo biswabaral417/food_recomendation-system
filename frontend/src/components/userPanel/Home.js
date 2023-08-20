@@ -1,5 +1,5 @@
 import React from 'react';
-import SharedPropsContext from '../contexts/SharedPropsContext';
+import CombinedContext from '../../contexts/CombinedContext';
 import { useContext } from 'react';
 import Card from './Card';
 
@@ -28,7 +28,7 @@ export default function Home() {
     viewData,
     Modal,
     itemToView,
-  } = useContext(SharedPropsContext);
+  } = useContext(CombinedContext);
 
   return (
     <>

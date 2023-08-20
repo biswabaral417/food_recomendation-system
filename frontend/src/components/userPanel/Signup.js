@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useState } from 'react';
+import CombinedContext from '../../contexts/CombinedContext';
 
 
 
-export default function Signup({ closeSignUpModal, openLoginModal }) {
+export default function Signup() {
+  const { closeSignUpModal, openLoginModal }=useContext(CombinedContext)
   const [rUserData, setRUserData] = useState({ userName: "", userPhone: "", userEmail: "", userPassword: "", userConfirmPassword: "", userLocation: "" });
 
   let feildId;
@@ -56,7 +58,6 @@ export default function Signup({ closeSignUpModal, openLoginModal }) {
     else {
       document.getElementById("cbwarning").textContent = `"check this box to continue"`
     }
-
   }
 
 

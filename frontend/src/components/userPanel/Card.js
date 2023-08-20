@@ -1,9 +1,9 @@
 
-import SharedPropsContext from "../contexts/SharedPropsContext";
+import CombinedContext from "../../contexts/CombinedContext";
 import { useContext } from "react";
 
 export default function Card({ food, mode, viewData, addToCart}) {
-    const { ucart, reduceItem } = useContext(SharedPropsContext);
+    const { ucart, reduceItem } = useContext(CombinedContext);
 
     // Calculate the quantity of this food item in the cart
     const foodQuantityInCart = ucart.filter(item => item.itemName === food.itemName).length;

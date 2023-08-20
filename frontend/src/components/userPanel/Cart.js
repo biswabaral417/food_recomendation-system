@@ -1,10 +1,10 @@
 import React from 'react';
-import SharedPropsContext from '../contexts/SharedPropsContext';
+import CombinedContext from '../../contexts/CombinedContext';
 import { useContext } from 'react';
 import Card from './Card';
 
 export default function Cart() {
-    const { addToCart, mode, ucart, cancelCart, viewData, Modal, itemToView } = useContext(SharedPropsContext)
+    const { addToCart, mode, ucart, cancelCart, viewData, Modal, itemToView } = useContext(CombinedContext)
     let totalitems = 0;
     let totalprice = 0;
 

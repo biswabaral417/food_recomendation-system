@@ -5,6 +5,7 @@ const UserData = require('../model/userSchema');
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const authenticate=require('../middleware/authenticate')
+const logout=require('../middleware/logout')
 
 
 
@@ -52,14 +53,14 @@ router.post('/register', async (req, res) => {
 
 router.post("/login", async (req, res) => {
     const { userEmail, userPassword } = req.body
-    console.log(req.body)
+    console.log(req.body);
     if (!userEmail || !userPassword) {
         return res.status(422).json({ error: "please enter email and passoword" })
     } else {
 
         try {
             const Verify = await UserData.findOne({ userEmail: userEmail })
-            console.log(Verify)
+            // console.log(Verify)
             if (Verify && await bcrypt.compare(userPassword, Verify.userPassword)) {
                 const token = await Verify.generateAuthtoken();
                 console.log(token);
@@ -72,8 +73,6 @@ router.post("/login", async (req, res) => {
             else {
                 res.status(422).json({ error: "given credentials are incorrect" })
             }
-
-
 
         } catch (error) {
             console.log(error);
@@ -95,13 +94,9 @@ router.get('/api/logs', authenticate, (req, res) => {
 });
 
 
-router.get('/api/logout',authenticate,(req,res)=>{
-    
-})
-
-
-
-
-
+router.get('/logout',logout,(req,res)=>{
+    res.clearCookie('jwtoken',{path:'/'})
+    res.status(200).json({sucess:"logout sucess"})
+});
 
 module.exports = router;
