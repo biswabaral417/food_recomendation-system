@@ -34,8 +34,8 @@ export default function LoginModal() {
                             <div className="mb-3">
                                 <label htmlFor="exampleInputPassword1" className="form-label text-black">Password</label>
                                 <div className='d-flex'>
-                                    <input type="password" onChange={(e) => setUserPassword(e.target.value)} value={userPassword} className="form-control" id="InputPassword" />
-                                    <button className='d-flex togp-btn mx-2' onClick={() => togPass()} type='button'><img src="../images/eye-fill.svg" alt="" /></button>
+                                    <input type="password" autoComplete='false' onChange={(e) => setUserPassword(e.target.value)} value={userPassword} className="form-control" id="InputPassword" />
+                                    <button className='d-flex togp-btn mx-2' onClick={() => togPass()} type='button'><img src="../images/eye-slash-fill.svg" alt="" /></button>
                                 </div>
                             </div>
                         </div>

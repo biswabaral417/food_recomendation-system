@@ -27,6 +27,15 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    isAdmin:{
+        type: String,
+        enum: ['true', 'false', 'pending'],
+        default: 'false'
+    },
+    
+    isSuperUser:{
+        type:Boolean
+    },
     tokens: [
         {
             token: {

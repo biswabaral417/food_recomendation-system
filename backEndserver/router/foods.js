@@ -26,17 +26,13 @@ router.get('/api/foodsdata', async (req, res) => {
 })
 
 
-router.route('/api/cartdata')
-    .post(authenticate, async (req, res) => {
-        // Handle the POST request, process the data, and potentially update a database
-        const requestData = req.body;
-        // Process requestData and update data if necessary
+router.route('/api/cartdata').post( async (req, res) => {
+        // const requestData = req.body;
         res.send('POST request received and processed');
     })
-    .get( authenticate  ,async (req, res) => {
-        // Handle the GET request, fetch data from a database, and send it as a response
-        const fetchedData = await fetchDataFromDatabase(); // Replace with your data fetching logic
-        res.json(fetchedData);
-    });
+    // .get( authenticate  ,async (req, res) => {
+    //     const fetchedData = await fetchDataFromDatabase(); 
+    //     res.json(fetchedData);
+    // });
 
 module.exports = router;
