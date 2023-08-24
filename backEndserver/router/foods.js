@@ -6,13 +6,6 @@ const authenticate=require('../middleware/authenticate')
 
 
 
-
-
-const getallfoods = async (res) => {
-
-}
-
-
 router.get('/api/foodsdata', async (req, res) => {
     try {
         const allfoods = await foodItems.find();

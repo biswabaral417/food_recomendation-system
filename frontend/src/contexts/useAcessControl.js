@@ -8,6 +8,7 @@ function useAcessControl() {
     const [logBtntxt, setLogbtnTxt] = useState("Login");
     const [userEmail, setUserEmail] = useState("");
     const [userPassword, setUserPassword] = useState(null);
+    const [userType,setUserType]=useState("customer");
 
 
 
@@ -18,25 +19,30 @@ function useAcessControl() {
                 headers: {
                     Accept: "application/json",
                     "Content-Type": "application/json"
-                },
-                credentials: "include"
 
+                },
+                credentials: "include",
             });
             const data = await res.json();
+            console.log(data.userIs)
 
             if (!(res.status === 200)) {
                 const error = new Error(res.error)
                 throw error;
             }
             else {
-                if (data) {
-                    setUserlogInfo(true)
-                    setLogbtnTxt("Logout");
+                if (data.userIs==="admin") {
+                    setUserType("admin")
                 }
+                else{
+                    setUserType("customer")
+                }
+                setUserlogInfo(true)
+                setLogbtnTxt("Log out");
             }
 
         } catch (error) {
-            // console.log(error) 
+            console.log(error)
 
         }
     }
@@ -148,7 +154,7 @@ function useAcessControl() {
     return {
         logInOutBtnFunc, userlogInfo, openLoginModal, logout, logBtntxt,
         closeLoginModal, getUserInfo, loginModal, signUpModal, openSignUpModal
-        , closeSignUpModal, setUserEmail, setUserPassword, PostData_Login,setUserlogInfo,setLogbtnTxt
+        , closeSignUpModal, setUserEmail, setUserPassword, PostData_Login, setUserlogInfo, setLogbtnTxt,userType
 
 
     }

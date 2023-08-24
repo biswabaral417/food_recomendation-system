@@ -15,10 +15,6 @@ export default function LoginModal() {
         }
     }
 
-
-
-
-
     return (
         <>
             <div className='Modal-wrapper' onClick={closeLoginModal}></div>

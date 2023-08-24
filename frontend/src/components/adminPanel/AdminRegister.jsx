@@ -110,7 +110,7 @@ export default function AdminRegister() {
                             Agree Terms and Conditions<i id="cbwarning" className='mx-3 text-danger text-italic'></i>
                         </label>
                     </div>
-                    <button className="btn btn-primary" onClick={PostData_Register_admin} >Create Account</button>
+                    <button className="btn btn-primary" onClick={PostData_Register_admin} >Apply Application</button>
                 </form>
             </div>
 

@@ -2,6 +2,7 @@ import React from 'react';
 import CombinedContext from '../../contexts/CombinedContext';
 import { useContext } from 'react';
 import Card from './Card';
+import { useNavigate } from 'react-router-dom';
 
 // Adjust the path accordingly
 
@@ -19,8 +20,13 @@ const findSeason = () => {
 }
 findSeason();
 
-export default function Home() {
+export default function Home({userType}) {
+  const navigate=useNavigate();
 
+  if (userType==="admin") {
+    navigate("/admin")
+  }
+  
   const {
     jsonData,
     mode,

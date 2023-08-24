@@ -19,7 +19,7 @@ const CombinedState = (props) => {
     const {
         logInOutBtnFunc,userlogInfo,openLoginModal,setLogbtnTxt,logout,logBtntxt,
         closeLoginModal,getUserInfo,setUserlogInfo,loginModal,signUpModal,openSignUpModal
-        ,closeSignUpModal,setUserEmail,setUserPassword,PostData_Login} =  useAcessControl();
+        ,closeSignUpModal,setUserEmail,setUserPassword,PostData_Login,userType} =  useAcessControl();
 
 
  
@@ -76,7 +76,8 @@ const CombinedState = (props) => {
         setUserPassword,
         PostData_Login,
         setUserlogInfo,
-        setLogbtnTxt
+        setLogbtnTxt,
+        userType
         
 
     }

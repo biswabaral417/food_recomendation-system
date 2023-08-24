@@ -35,6 +35,7 @@ require('./db/conn')// adding db connection
 
 app.use(require('./router/auth')) //route files authentications files
 app.use(require('./router/foods'))//give foods data
+app.use(require('./router/admins'))//adminspecific stuff
 
 //middleware
 const middleware = (req, res, next) => {

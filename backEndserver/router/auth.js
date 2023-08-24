@@ -12,6 +12,7 @@ const logout = require('../middleware/logout')
 
 
 router.use(express.json())
+
 router.post('/register', async (req, res) => {
     const { userName, userPhone, userEmail, userPassword, userConfirmPassword, userLocation } = req.body //es6 prop object destructuring ir userName=req.body.userName to {userNAme}=req.body
     if (!userName || !userPhone || !userEmail || !userPassword || !userConfirmPassword || !userLocation) {
@@ -51,45 +52,6 @@ router.post('/register', async (req, res) => {
 
 })
 
-router.post('/api/admins/register', async (req, res) => {
-    const { userName, userPhone, userEmail, userPassword, userConfirmPassword, userLocation } = req.body //es6 prop object destructuring ir userName=req.body.userName to {userNAme}=req.body
-    isAdmin = "pending";
-    if (!userName || !userPhone || !userEmail || !userPassword || !userConfirmPassword || !userLocation) {
-        return res.status(422).json({ error: "enter all credintials" })
-        console.log(req.body)
-    }
-    else {
-        try {
-            const userExists = await UserData.findOne({ userEmail: userEmail })
-            if (userExists) {
-                return res.status(422).json({ error: "user exists" })
-            }
-            else if (userConfirmPassword != userPassword) {
-                return res.status(422).json({ error: "passwords donot match" }).send("error:passwords donot match")
-
-            }
-            else {
-                const user = new UserData({ userName, userPhone, userEmail, userPassword, userConfirmPassword, userLocation, isAdmin })
-                isAdmin="pending"
-                const userRegistered = await user.save()
-                if (userRegistered) {
-
-                    res.status(201).json({ sucess: " registered" });
-                }
-                else {
-                    res.status(500).json({ failed: "server error" });
-                }
-            }
-
-        } catch (error) {
-            console.log(error);
-
-        }
-    }
-
-})
-
-
 
 
 
@@ -108,7 +70,9 @@ router.post("/login", async (req, res) => {
                 console.log(token);
                 res.cookie("jwtoken", token, {
                     expires: new Date(Date.now() + 2630000000),
-                    httpOnly: true
+                    httpsOnly: true,
+                    sameSite: "None",
+                    secure: true
                 })
                 return res.status(201).json({ sucess: "sucessful login" })
             }
@@ -127,53 +91,24 @@ router.post("/login", async (req, res) => {
 
 //koni k gareko
 router.get('/api/logs', authenticate, (req, res) => {
-    if (req.rootUser) {
-        // console.log(res)
-        res.status(200).send(true);
+    if (req.rootUser.isAdmin) {
+        console.log(req.rootUser)
+        res.status(200).json({ userIs: "admin" });
+    } else if (!req.rootUser.isAdmin&&req.rootUser) {
+        res.status(200).json({ userIs: "customer" });
     } else {
+
         res.status(401).send(false);
     }
 });
 
 
+
 router.get('/logout', logout, (req, res) => {
-    res.clearCookie('jwtoken', { path: '/' })
+    res.clearCookie('jwtoken', { path: '/', httpsOnly: true, sameSite: 'None', secure: true })
     res.status(200).json({ sucess: "logout sucess" })
 });
 
-
-
-
-
-
-
-
-
-router.get('/api/users', authenticate, async (req, res) => {
-    try {
-        const users = await UserData.find();
-        res.status(200).json(users);
-    } catch (error) {
-        res.status(500).json({ error: 'Server error' });
-    }
-});
-
-
-router.get('/api/Admins', authenticate, async (req, res) => {
-
-    try {
-        if (req.rootUser.isSuperUser) {
-            const Admins = await UserData.find({ isAdmin: { $ne: 'false' } });
-            res.status(200).send(Admins);
-        }
-        else{
-            res.status(400).json({error:"unauthorized"})
-        }
-    } catch (error) {
-        res.status(500).json({ error: 'Server error' });
-    }
-
-});
 
 
 
