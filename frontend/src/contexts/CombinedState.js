@@ -24,8 +24,8 @@ const CombinedState = (props) => {
 
  
     const {
-        ucart,addToCart,cancelCart,reduceItem
-    }=useCarts()
+        ucart,addToCart,EmptyCart,reduceItem,order
+    }=useCarts(openLoginModal,userlogInfo)
 
 
 
@@ -59,7 +59,7 @@ const CombinedState = (props) => {
         logout,
         ucart,
         addToCart,
-        cancelCart,
+        EmptyCart,
         itemToView,
         viewData,
         reduceItem,
@@ -77,7 +77,7 @@ const CombinedState = (props) => {
         PostData_Login,
         setUserlogInfo,
         setLogbtnTxt,
-        userType
+        userType,order
         
 
     }

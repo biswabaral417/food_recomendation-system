@@ -64,7 +64,8 @@ router.post("/login", async (req, res) => {
 
         try {
             const Verify = await UserData.findOne({ userEmail: userEmail })
-            // console.log(Verify)
+
+            console.log(jwt.verify)
             if (Verify && await bcrypt.compare(userPassword, Verify.userPassword)) {
                 const token = await Verify.generateAuthtoken();
                 console.log(token);
@@ -85,20 +86,16 @@ router.post("/login", async (req, res) => {
 
         }
     }
-
-
 })
 
 //koni k gareko
 router.get('/api/logs', authenticate, (req, res) => {
-    if (req.rootUser.isAdmin) {
-        console.log(req.rootUser)
+    if (req.rootUser.isAdmin==="true") {
         res.status(200).json({ userIs: "admin" });
-    } else if (!req.rootUser.isAdmin&&req.rootUser) {
+    } else if ((req.rootUser.isAdmin==="false")&&req.rootUser) {
         res.status(200).json({ userIs: "customer" });
     } else {
-
-        res.status(401).send(false);
+        res.status(401).send("false");
     }
 });
 

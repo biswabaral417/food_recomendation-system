@@ -42,7 +42,6 @@ router.get('/api/Admins', authenticate, async (req, res) => {
 });
 
 router.post('/api/admins/register', async (req, res) => {
-    console.log("ksjbg")
     const { userName, userPhone, userEmail, userPassword, userConfirmPassword, userLocation } = req.body //es6 prop object destructuring ir userName=req.body.userName to {userNAme}=req.body
 
     if (!userName || !userPhone || !userEmail || !userPassword || !userConfirmPassword || !userLocation) {

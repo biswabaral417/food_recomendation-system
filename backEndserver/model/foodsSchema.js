@@ -18,7 +18,6 @@ const foodSchema=new mongoose.Schema({
         type:String,
         require:true 
     },
-    
     cook:{
         type:String,
         require:true

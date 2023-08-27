@@ -8,13 +8,14 @@ function useAcessControl() {
     const [logBtntxt, setLogbtnTxt] = useState("Login");
     const [userEmail, setUserEmail] = useState("");
     const [userPassword, setUserPassword] = useState(null);
-    const [userType,setUserType]=useState("customer");
+    const [userType, setUserType] = useState("customer");
 
 
 
     const getUserInfo = async () => {
-        try {
-            const res = await fetch('/api/logs', {
+        if (document.cookie) {
+            try {
+                const res = await fetch('/api/logs', {
                 method: "GET",
                 headers: {
                     Accept: "application/json",
@@ -24,28 +25,32 @@ function useAcessControl() {
                 credentials: "include",
             });
             const data = await res.json();
-            console.log(data.userIs)
-
-            if (!(res.status === 200)) {
-                const error = new Error(res.error)
-                throw error;
+            
+            if ((res.status === 401)) {
+                setUserType("customer")
+                setUserlogInfo(false)
             }
-            else {
-                if (data.userIs==="admin") {
+            else if (res.status===200){
+                if (data.userIs === "admin") {
                     setUserType("admin")
                 }
-                else{
+                else {
                     setUserType("customer")
                 }
                 setUserlogInfo(true)
                 setLogbtnTxt("Log out");
             }
 
+            else  {
+                const error = new Error(res.error)
+                throw error;
+            }
         } catch (error) {
+            setUserType("customer")
             console.log(error)
-
         }
     }
+}
 
 
     //logout functions
@@ -154,7 +159,7 @@ function useAcessControl() {
     return {
         logInOutBtnFunc, userlogInfo, openLoginModal, logout, logBtntxt,
         closeLoginModal, getUserInfo, loginModal, signUpModal, openSignUpModal
-        , closeSignUpModal, setUserEmail, setUserPassword, PostData_Login, setUserlogInfo, setLogbtnTxt,userType
+        , closeSignUpModal, setUserEmail, setUserPassword, PostData_Login, setUserlogInfo, setLogbtnTxt, userType
 
 
     }
