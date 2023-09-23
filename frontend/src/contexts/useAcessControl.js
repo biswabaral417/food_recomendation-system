@@ -34,6 +34,10 @@ function useAcessControl() {
                 if (data.userIs === "admin") {
                     setUserType("admin")
                 }
+                else if(data.userIs==="dvg"){
+                    setUserType("dvg")
+
+                }
                 else {
                     setUserType("customer")
                 }
@@ -68,8 +72,8 @@ function useAcessControl() {
             window.alert(data.error);
         }
         else if (res.status === 200) {
-            window.alert(data.sucess);
-            console.log(data.sucess);
+            window.alert(data.success);
+            console.log(data.success);
             setLogbtnTxt("Login")
             setUserlogInfo(false);
         }
@@ -98,8 +102,8 @@ function useAcessControl() {
 
         }
         else if (res.status === 201) {
-            window.alert(data.sucess);
-            console.log(data.sucess);
+            window.alert(data.success);
+            console.log(data.success);
             setLogbtnTxt("Log out")
             setUserlogInfo(true);
             closeLoginModal();

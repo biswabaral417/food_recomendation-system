@@ -52,14 +52,18 @@ router.post('/api/order', authenticate, async (req, res) => {
 });
 
 
-router.get('/api/admins/getPendingorders', authenticate, async (req, res) => {
+
+
+router.get('/api/admins/getOrders', authenticate, async (req, res) => {
     if (req.rootUser.isAdmin === "true") {
         try {
-            const pendingOrders = await Order.find({ state: 'ordered' }).populate('user').populate('items.food');
-            if(pendingOrders){
+            const pendingOrders = await Order.find()
+                .populate({ path: 'user', select: ['userName', 'userEmail', 'userPhone', 'userLocation'] })
+                .populate({path:'items.food',select:['itemName','itemPrice','state']});
+            if (pendingOrders) {
                 res.status(200).json(pendingOrders)
             }
-            else{
+            else {
                 res.status(200).send("no orders pending")
             }
         } catch (error) {
@@ -67,7 +71,29 @@ router.get('/api/admins/getPendingorders', authenticate, async (req, res) => {
             console.log(error)
         }
     }
-    else{
+    else {
+        return
+    }
+})
+
+router.post('/api/admins/ApproveOrders', authenticate, async (req, res) => {
+    if (req.rootUser.isAdmin === "true") {
+        try {
+            const OrDer = await Order.findOne(req.body)
+            console.log(OrDer.state);
+            const filter = { _id: req.body._id };
+            const update = { state: "approved"  };
+ 
+    
+            const result = await Order.updateOne(filter, update);
+            console.log(result)
+
+        } catch (error) {
+            res.send(error)
+            console.log(error)
+        }
+    }
+    else {
         return
     }
 })

@@ -36,12 +36,21 @@ require('./db/conn')// adding db connection
 app.use(require('./router/auth')) //route files authentications files
 app.use(require('./router/foods'))//give foods data
 app.use(require('./router/admins'))//adminspecific stuff
-
+app.use(require('./router/usergetOrder'))//user to see their order status
+app.use(require('./router/addmodifyFoods'))//add or modify foods
+app.use(require('./router/removeFoods'))//to remove foods
+app.use(require('./router/deliveryguy/dvgregister'))//to register delivery guys
+app.use(require('./router/deliveryguy/deliveryGuycurrentOrder'))//to register delivery guys
+app.use(require('./router/deliveryguy/dvGchoseFromOrder'))//to chose from orders delivery guys
+app.use(require('./router/deliveryguy/dvgGetOtwme'))//to chose from orders delivery guys
+app.use(require('./router/deliveryguy/dvgDeliverAndPaid'))//to chose from orders delivery guys
+ 
 //middleware
-const middleware = (req, res, next) => {
-  console.log("middleware");
-  next();
-}
+// const middleware = (req, res, next) => {
+//   console.log("middleware");
+//   next();
+// }
+//the avove commented stuf was example of middleware function
 
 
 server.listen(PORT, () => {

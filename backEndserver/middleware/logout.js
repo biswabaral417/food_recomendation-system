@@ -4,9 +4,8 @@ const UserData = require('../model/userSchema')
 
 
 const logout = async (req, res, next) => {
-    
-    try {
 
+    try {
         const token = req.cookies.jwtoken
         if (token) {
             console.log(token)
@@ -22,9 +21,7 @@ const logout = async (req, res, next) => {
         else {
             rootUser.tokens = rootUser.tokens.filter(tokenObj => tokenObj.token !== token);
             await rootUser.save();
-
         }
-
         next();
     } catch (error) {
         res.status(401).send("unauthorized: token not provided")

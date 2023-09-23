@@ -1,6 +1,20 @@
 const mongoose = require('mongoose');
 
 
+const itemSchema = new mongoose.Schema({
+    
+        food: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'foodItems',
+            required: true
+        },
+        count: {
+            type: Number
+        }
+    
+    
+})
+
 
 
 
@@ -11,27 +25,19 @@ const orderSchema = new mongoose.Schema({
         ref: 'UserData',
         required: true
     },
-    items:  [{
-    food:{
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'foodItems',
-            required: true
-    },
-    count:{
-        type:Number
-    }}],
-    state:{
+    items: [itemSchema] ,
+    state: {
         type: String,
-        enum: ['ordered', 'onRoute', 'paid'],
+        enum: ['ordered', 'approved', 'onRoute', 'paid'],
         default: 'ordered'
     },
-    OrderedTime:{
-        type:Date,
-        default:Date.now()+20700000
+    OrderedTime: {
+        type: Date,
+        default: Date.now() + 20700000
     },
-    DeliveredTime:{
-        type:Date,
-        default:null
+    DeliveredTime: {
+        type: Date,
+        default: null
     }
 });
 

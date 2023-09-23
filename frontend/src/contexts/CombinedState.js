@@ -12,7 +12,8 @@ const CombinedState = (props) => {
     const  {jsonData  }=fetchData();//this function fetches foods data from backend server which is connected to db
 
 
-    const {closeModal,itemToView,viewData,itemSearch,searchStr,mode,toggleMode}=useFunctoinsFeatures()
+    const {closeModal,itemToView,viewData,itemSearch,searchStr,mode,Removefoodmodalv,closeRemovefoodModal,openRemovefoodModal,
+        toggleMode,addfoodmodalv,closeAddfoodModal,openAddfoodModal}=useFunctoinsFeatures()
 
 
     //this is all about login logout and sighnup
@@ -77,7 +78,12 @@ const CombinedState = (props) => {
         PostData_Login,
         setUserlogInfo,
         setLogbtnTxt,
-        userType,order
+        userType,order,
+
+        addfoodmodalv,
+        closeAddfoodModal,
+        openAddfoodModal,
+        Removefoodmodalv,closeRemovefoodModal,openRemovefoodModal
         
 
     }

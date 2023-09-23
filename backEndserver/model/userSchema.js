@@ -32,6 +32,11 @@ const userSchema = new mongoose.Schema({
         enum: ['true', 'false', 'pending'],
         default: 'false'
     },
+    isDeliveryGuy:{
+        type: String,
+        enum: ['true', 'false', 'pending'],
+        default: 'false'
+    },
     
     isSuperUser:{
         type:Boolean

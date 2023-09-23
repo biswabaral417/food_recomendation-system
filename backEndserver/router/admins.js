@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router()
 require('../db/conn')
 const UserData = require('../model/userSchema');
-const bcrypt = require('bcrypt')
-const jwt = require('jsonwebtoken')
+// const bcrypt = require('bcrypt')
+// const jwt = require('jsonwebtoken')
 const authenticate = require('../middleware/authenticate')
 const authSuperUser = require('../middleware/authSuperUser')
 const logout = require('../middleware/logout')
@@ -46,7 +46,7 @@ router.post('/api/admins/register', async (req, res) => {
 
     if (!userName || !userPhone || !userEmail || !userPassword || !userConfirmPassword || !userLocation) {
         return res.status(422).json({ error: "enter all credintials" })
-        console.log(req.body)
+        // console.log(req.body)
     }
     else {
         try {
@@ -64,7 +64,7 @@ router.post('/api/admins/register', async (req, res) => {
                 const userRegistered = await user.save()
                 if (userRegistered) {
 
-                    res.status(201).json({ sucess: " registered" });
+                    res.status(201).json({ success: " registered" });
                 }
                 else {
                     res.status(500).json({ failed: "server error" });

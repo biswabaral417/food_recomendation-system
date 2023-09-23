@@ -3,23 +3,21 @@ const UserData = require('../model/userSchema')
 
 
 const authSuperUser = async (req, res, next) => {
-    
-    try { 
-        
-        const token=req.cookies.jwtoken
-        const verifyToken =  jwt.verify(token, process.env.SECRET_KEY);
 
+    try {
+
+        const token = req.cookies.jwtoken
+        const verifyToken = jwt.verify(token, process.env.SECRET_KEY);
         const rootUser = await UserData.findOne({ _id: verifyToken._id, "tokens.token": token });
-        
         if (!rootUser) { throw new Error('user not found') }
-        
+
         req.token = token;
-        req.rootUser = rootUser; 
+        req.rootUser = rootUser;
         req.userID = rootUser._id
         if (rootUser.isSuperUser) {
             next();
         }
-        else{
+        else {
             throw new Error("unAuthorized")
         }
 

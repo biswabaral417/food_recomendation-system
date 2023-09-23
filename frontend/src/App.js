@@ -5,6 +5,11 @@ import Nav from './components/userPanel/Nav';
 import LoginModal from './components/userPanel/LoginModal';
 import Signup from './components/userPanel/Signup';
 import CombinedContext from './contexts/CombinedContext';
+import Order from './components/userPanel/Order';
+import DeliveryGuy from './components/deliveryPanel/DeliveryGuy';
+import DvgNavbar from './components/deliveryPanel/DvgNavbar';
+import DvgRegister from './components/deliveryPanel/Dvgregister';
+import DeliverWhat from './components/deliveryPanel/DeliverWhat';
 
 
 const AdminManagement = lazy(() => import('./components/adminPanel/AdminManagement'));
@@ -19,8 +24,8 @@ const Cart = lazy(() => import('./components/userPanel/Cart'));
 const Foods = lazy(() => import('./components/userPanel/Foods'));
 
 function App() {
-  const { signUpModal, loginModal,userType } = useContext(CombinedContext);
-  
+  const { signUpModal, loginModal, userType } = useContext(CombinedContext);
+
 
 
   return (
@@ -29,23 +34,38 @@ function App() {
         {signUpModal && <Signup />}
         {loginModal && <LoginModal />}
         <Suspense fallback={<div>Loading...</div>}>
-          {userType==="admin" ?
+          {userType === "admin" ?
             (
               <Suspense fallback={<div>Loading Admin Nav...</div>}>
                 <AdminNav />
               </Suspense>
             ) : (
-              <Nav />
-            )}
+
+              userType === "dvg" ? (
+
+                <Suspense fallback={<div>Loading Admin Nav...</div>}>
+                  <DvgNavbar />
+                </Suspense>
+              ) : (
+
+                <Nav />
+              )
+
+            )
+          }
           <Routes>
             <Route path='/' element={<Home userType={userType} />} />
             <Route path='/foods' element={<Foods />} />
             <Route path='/cart' element={<Cart />} />
             <Route path='/about' element={<About />} />
-            <Route path='/admin/Superuser' element={<AdminManagement/>} />
+            <Route path='/order' element={<Order />} />
+            <Route path='/admin/Superuser' element={<AdminManagement />} />
             <Route path='/admin/' element={<AdminPanelHome />} />
             <Route path='/admin/serve' element={<AdminPanelServe />} />
             <Route path='/admin/register' element={<AdminRegister />} />
+            <Route path='/deliveryguy' element={<DeliveryGuy />} />
+            <Route path='/deliveryguy/deliverwhat' element={<DeliverWhat />} />
+            <Route path='/deliveryguy/register' element={<DvgRegister />} />
 
           </Routes>
         </Suspense>

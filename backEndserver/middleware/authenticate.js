@@ -5,6 +5,7 @@ const UserData = require('../model/userSchema')
 const authenticate = async (req, res, next) => {
     
     try { 
+        console.log(req)
         
         const token=req.cookies.jwtoken
         const verifyToken =  jwt.verify(token, process.env.SECRET_KEY);
@@ -21,7 +22,5 @@ const authenticate = async (req, res, next) => {
     } catch (error) {
         res.status(401).send("unauthorized: token not provided")
     }
-
-
 }
 module.exports = authenticate;

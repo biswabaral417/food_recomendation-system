@@ -33,7 +33,7 @@ export default function AdminNav() {
                         <label className={`form-check-label text-${mode === "light" ? "dark" : "light"}`} htmlFor="flexSwitchCheckDefault">dark mode</label>
                     </div>
                     <form className="d-flex m-1" id='search' role="search">
-                        <Link to='/admin/'>
+                        <Link to='/admin/serve'>
                             <input className="form-control me-2 " id='str' type="search" placeholder="Search" onChange={() => itemSearch(document.getElementById('str').value)} aria-label="Search" />
                         </Link>
                     </form>

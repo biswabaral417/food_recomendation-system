@@ -30,8 +30,22 @@ export default function useFunctoinsFeatures() {
         }
     };
 
+    const [addfoodmodalv,setaddfoodmodalv]=useState(false)
+    const closeAddfoodModal=()=>{
+        setaddfoodmodalv(false)
+    }
+    const openAddfoodModal=()=>{
+        setaddfoodmodalv(true)
+    }
+    const [Removefoodmodalv,setRemovefoodmodalv]=useState(false)
+    const closeRemovefoodModal=()=>{
+        setRemovefoodmodalv(false)
+    }
+    const openRemovefoodModal=()=>{
+        setRemovefoodmodalv(true)
+    }
 
     return {
-        itemToView, viewData, closeModal,searchStr,itemSearch,toggleMode,mode
+        itemToView, viewData, closeModal,searchStr,itemSearch,toggleMode,mode,addfoodmodalv,closeAddfoodModal,openAddfoodModal,Removefoodmodalv,closeRemovefoodModal,openRemovefoodModal
     }
 }

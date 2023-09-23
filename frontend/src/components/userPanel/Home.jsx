@@ -1,6 +1,6 @@
 import React from 'react';
 import CombinedContext from '../../contexts/CombinedContext';
-import { useContext } from 'react';
+import { useContext,useEffect } from 'react';
 import Card from './Card';
 import { useNavigate } from 'react-router-dom';
 
@@ -23,9 +23,13 @@ findSeason();
 export default function Home({userType}) {
   const navigate=useNavigate();
 
-  if (userType==="admin") {
-    navigate("/admin")
-  }
+  
+  useEffect(() => {
+    if (userType === 'admin') {
+      navigate('/admin');
+    }
+  }, [userType, navigate]);
+
   
   const {
     jsonData,

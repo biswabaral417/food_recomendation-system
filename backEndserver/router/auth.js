@@ -16,8 +16,8 @@ router.use(express.json())
 router.post('/register', async (req, res) => {
     const { userName, userPhone, userEmail, userPassword, userConfirmPassword, userLocation } = req.body //es6 prop object destructuring ir userName=req.body.userName to {userNAme}=req.body
     if (!userName || !userPhone || !userEmail || !userPassword || !userConfirmPassword || !userLocation) {
-        return res.status(422).json({ error: "enter all credintials" })
         console.log(req.body)
+        return res.status(422).json({ error: "enter all credintials" })
     }
     else {
 
@@ -35,7 +35,7 @@ router.post('/register', async (req, res) => {
                 const userRegistered = await user.save()
                 if (userRegistered) {
 
-                    res.status(201).json({ sucess: " registered" });
+                    res.status(201).json({ success: " registered" });
                 }
                 else {
                     res.status(500).json({ failed: "server error" });
@@ -75,7 +75,7 @@ router.post("/login", async (req, res) => {
                     sameSite: "None",
                     secure: true
                 })
-                return res.status(201).json({ sucess: "sucessful login" })
+                return res.status(201).json({ success: "successful login" })
             }
             else {
                 res.status(422).json({ error: "given credentials are incorrect" })
@@ -92,9 +92,11 @@ router.post("/login", async (req, res) => {
 router.get('/api/logs', authenticate, (req, res) => {
     if (req.rootUser.isAdmin==="true") {
         res.status(200).json({ userIs: "admin" });
-    } else if ((req.rootUser.isAdmin==="false")&&req.rootUser) {
+    }else if ((req.rootUser.isDeliveryGuy==="true")) {
+       res.status(200).json({ userIs: "dvg" });
+   }else if ((req.rootUser.isAdmin==="false")&&req.rootUser) {
         res.status(200).json({ userIs: "customer" });
-    } else {
+    }else {
         res.status(401).send("false");
     }
 });
@@ -103,7 +105,7 @@ router.get('/api/logs', authenticate, (req, res) => {
 
 router.get('/logout', logout, (req, res) => {
     res.clearCookie('jwtoken', { path: '/', httpsOnly: true, sameSite: 'None', secure: true })
-    res.status(200).json({ sucess: "logout sucess" })
+    res.status(200).json({ success: "logout success" })
 });
 
 

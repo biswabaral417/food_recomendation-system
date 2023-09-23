@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import CombinedContext from '../../contexts/CombinedContext'
 
-export default function OrderCard({ buttons, order }) {
+export default function DvgOrderCard({ buttons, order }) {
     const [totalCost, setTotalCost] = useState(0);
     useEffect(() => {
         // Calculate the total cost when order.items and item.food are available
@@ -29,7 +29,6 @@ export default function OrderCard({ buttons, order }) {
                             <span ><p>ordered at :</p><h6>{order.OrderedTime}</h6></span>
                             <span ><p>Location :</p><h4>{order.user.userLocation} </h4></span>
                         </div>
-                        <span className='border px-2' style={{ width: "130px" }}> <p>state :</p> <h4>{order.state}</h4></span>
 
 
                     </div>
@@ -46,10 +45,11 @@ export default function OrderCard({ buttons, order }) {
                         <tbody>
 
                             {order.items.map((item, i) => {
+                                // console.log(item)
                                 if (item.food !== null) {
 
                                     return (
-                                        <tr key={item.food._id}>
+                                        <tr key={item._id}>
                                             <td className='border px-1'>{i + 1}</td>
                                             <td className='border px-1'>{item.food.itemName}</td>
                                             <td className='border px-1'>{item.food.itemPrice} RS</td>
@@ -78,14 +78,12 @@ export default function OrderCard({ buttons, order }) {
             <div className='my-auto'>
                 <h4>Total Cost : {totalCost} RS</h4>
                 {
-                    order.state === "ordered" ? (
+                    (
                         buttons.map((element, index) => (
                             <button key={index} className='btn btn-primary my-1' onClick={() => element.func(order)}>{element.btntxt}</button>
                         ))
 
-                    ) : (
-                        ""
-                    )
+                    ) 
                 }
             </div>
 
