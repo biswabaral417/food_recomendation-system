@@ -15,7 +15,7 @@ const isAdmin = (req, res, next) => {
     }
 }
 
-router.post('/api/admins/modifyfoodsdata', authenticate, isAdmin, async (req, res) => {
+router.post('/api/admins/modifySongdata', authenticate, isAdmin, async (req, res) => {
 
     const { item_name, imgloc, RecSeason, price } = req.body.adminInpFoods;
     console.log(item_name)

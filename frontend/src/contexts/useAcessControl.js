@@ -35,7 +35,7 @@ function useAcessControl() {
                     setUserType("admin")
                 }
                 else if(data.userIs==="dvg"){
-                    setUserType("dvg")
+                    setUserType("dvgw")
 
                 }
                 else {
