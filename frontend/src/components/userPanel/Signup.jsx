@@ -41,8 +41,8 @@ export default function Signup() {
         console.log(data.error);
       }
       else if (res.status === 201) {
-        window.alert(data.sucess);
-        console.log(data.sucess);
+        window.alert(data.success);
+        console.log(data.success);
         closeSignUpModal();
         openLoginModal();
       }

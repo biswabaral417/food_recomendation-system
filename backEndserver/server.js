@@ -30,6 +30,7 @@ app.use(cookieParser());
 //variable hidden such as passwords connection
 
 const PORT = process.env.PORT;
+app.use(express.static('../frontend/build'))
 
 require('./db/conn')// adding db connection
 
@@ -50,9 +51,9 @@ app.use(require('./router/deliveryguy/dvgDeliverAndPaid'))//to chose from orders
 //   console.log("middleware");
 //   next();
 // }
-//the avove commented stuf was example of middleware function
+//the avove commented stuf was example of middleware function 
 
-
+ 
 server.listen(PORT, () => {
   console.log(`Server running on port ${PORT} (HTTPS)`);
 });

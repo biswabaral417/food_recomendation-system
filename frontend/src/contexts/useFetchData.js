@@ -16,6 +16,7 @@ function useFetchData() {
           throw error;
         } else {
           setJsonData(data);
+          console.log(data);
         }
       } catch (error) {
         console.log(error);

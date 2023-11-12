@@ -3,6 +3,10 @@ const mongoose = require('mongoose')
 
 
 const mongoURI = process.env.DB
+console.log(mongoURI)
+console.log(process.env.SECRET_KEY)
+console.log(process.env.PORT)
+
 
 
 mongoose.connect(mongoURI, {

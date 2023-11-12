@@ -46,7 +46,7 @@ export default function Home({userType}) {
         itemToView !== "" &&
         <Modal />
       }
-     
+   
 
       <h1 className='text-center m-3'>Recommended this season</h1>
       <div className='container text-center foodgrid'>
