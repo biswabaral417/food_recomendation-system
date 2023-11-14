@@ -59,7 +59,7 @@ function useAcessControl() {
 
     //logout functions
     const logout = async () => {
-        const res = await fetch("/logout", {
+        const res = await fetch("/api/logout", {
             method: "GET",
             headers: {
                 Accept: "application/json",
@@ -89,7 +89,7 @@ function useAcessControl() {
 
     const PostData_Login = async (e) => {
         e.preventDefault()
-        const res = await fetch("/login", {
+        const res = await fetch("/api/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

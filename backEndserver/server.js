@@ -30,7 +30,20 @@ app.use(cookieParser());
 //variable hidden such as passwords connection
 
 const PORT = process.env.PORT;
-app.use(express.static('../frontend/build'))
+
+
+
+//serving the build folder from react app npm run build creates this folder which is copied here ad being served by nodejs
+app.use(express.static(path.join(__dirname,'build')))
+
+// the /^\/(?!api).*/ is regex  used in app.get is telling server to let html page handle all routes internally within react app if /* is not equal to /api
+
+app.get(/^\/(?!api).*/, function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
+
+
 
 require('./db/conn')// adding db connection
 

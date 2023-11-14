@@ -13,7 +13,7 @@ const logout = require('../middleware/logout')
 
 router.use(express.json())
 
-router.post('/register', async (req, res) => {
+router.post('/api/register', async (req, res) => {
     const { userName, userPhone, userEmail, userPassword, userConfirmPassword, userLocation } = req.body //es6 prop object destructuring ir userName=req.body.userName to {userNAme}=req.body
     if (!userName || !userPhone || !userEmail || !userPassword || !userConfirmPassword || !userLocation) {
         console.log(req.body)
@@ -55,7 +55,7 @@ router.post('/register', async (req, res) => {
 
 
 
-router.post("/login", async (req, res) => {
+router.post("/api/login", async (req, res) => {
     const { userEmail, userPassword } = req.body
     console.log(req.body);
     if (!userEmail || !userPassword) {
@@ -103,7 +103,7 @@ router.get('/api/logs', authenticate, (req, res) => {
 
 
 
-router.get('/logout', logout, (req, res) => {
+router.get('/api/logout', logout, (req, res) => {
     res.clearCookie('jwtoken', { path: '/', httpsOnly: true, sameSite: 'None', secure: true })
     res.status(200).json({ success: "logout success" })
 });
