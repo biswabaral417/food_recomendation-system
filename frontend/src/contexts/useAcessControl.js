@@ -76,10 +76,14 @@ function useAcessControl() {
             console.log(data.success);
             setLogbtnTxt("Login")
             setUserlogInfo(false);
+            window.location.reload();
         }
         else {
             window.alert("connection error")
         }
+        
+
+
     }
 
 
@@ -107,10 +111,14 @@ function useAcessControl() {
             setLogbtnTxt("Log out")
             setUserlogInfo(true);
             closeLoginModal();
+            window.location.reload();
+
         }
         else {
             window.alert("connection error")
         }
+        // Location.reload()
+      
     }
 
 

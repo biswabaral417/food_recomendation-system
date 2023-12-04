@@ -25,7 +25,7 @@ export default function Signup() {
     if ((document.getElementById('flexCheckChecked')).checked) {
       const { userName, userPhone, userEmail, userPassword, userConfirmPassword, userLocation } = rUserData;
       console.log({ rUserData })
-      const res = await fetch("/register", {
+      const res = await fetch("/api/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -59,10 +59,6 @@ export default function Signup() {
       document.getElementById("cbwarning").textContent = `"check this box to continue"`
     }
   }
-
-
-
-
 
 
   const togPass = () => {

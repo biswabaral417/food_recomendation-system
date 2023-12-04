@@ -1,0 +1,327 @@
+[
+      {
+        "itemName": "butterScotch",
+        "itemPrice": "80RS",
+        "itemImgLoc": "../images/foodimages/icecream/buttorScotch.jpg",
+        "rSeasons": "Summer"
+      },
+      {
+        "itemName": "vanilla",
+        "itemPrice": "60RS",
+        "itemImgLoc": "../images/foodimages/icecream/vanillaIce.jpeg",
+        "rSeasons": "Summer"
+      },
+      {
+        "itemName": "coke",
+        "itemPrice": "85RS",
+        "itemImgLoc": "../images/foodimages/colddrinks/Coke-500ml.jpg",
+        "rSeasons": "Summer"
+      },
+      {
+        "itemName": "Gorkha-strong Extra-Strong",
+        "itemPrice": "300RS",
+        "itemImgLoc": "../images/foodimages/colddrinks/Gorkha-Strong.png",
+        "rSeasons": "Summer"
+      },
+      {
+        "itemName": "chickenCaesarSalad",
+        "itemPrice": "620RS",
+        "itemImgLoc": "../images/foodimages/ortherfoods/chickenCaesarSalad.jpg",
+        "rSeasons": "Summer"
+      },
+      {
+        "itemName": "seaFoodsalad",
+        "itemPrice": "550RS",
+        "itemImgLoc": "../images/foodimages/ortherfoods/seaFoodsalad.jpeg",
+        "rSeasons": "Summer"
+      },
+      {
+        "itemName": "Strawberry Salad",
+        "itemPrice": "450RS",
+        "itemImgLoc": "../images/foodimages/salads/StrawberrySalad.jpeg",
+        "rSeasons": "Summer"
+      },
+      {
+        "itemName": "Grilled Asparagus",
+        "itemPrice": "500RS",
+        "itemImgLoc": "../images/foodimages/vegetables/GrilledAsparagus.jpeg",
+        "rSeasons": "Summer"
+      },
+      {
+        "itemName": "Spinach Quiche",
+        "itemPrice": "400RS",
+        "itemImgLoc": "../images/foodimages/breakfast/SpinachQuiche.jpeg",
+        "rSeasons": "Summer"
+      },
+      {
+        "itemName": "Lemonade",
+        "itemPrice": "200RS",
+        "itemImgLoc": "../images/foodimages/drinks/Lemonade.jpeg",
+        "rSeasons": "Summer"
+      },
+      {
+        "itemName": "Grilled Lamb Chops",
+        "itemPrice": "800RS",
+        "itemImgLoc": "../images/foodimages/meat/GrilledLambChops.jpeg",
+        "rSeasons": "Summer"
+      },
+      {
+        "itemName": "Mixed Berry Smoothie",
+        "itemPrice": "350RS",
+        "itemImgLoc": "../images/foodimages/drinks/MixedBerrySmoothie.jpeg",
+        "rSeasons": "Summer"
+      },
+      {
+        "itemName": "Chicken Caesar Salad",
+        "itemPrice": "550RS",
+        "itemImgLoc": "../images/foodimages/salads/ChickenCaesarSalad.jpeg",
+        "rSeasons": "Summer"
+      },
+      {
+        "itemName": "Vegetable Stir-Fry",
+        "itemPrice": "400RS",
+        "itemImgLoc": "../images/foodimages/vegetables/VegetableStirFry.jpeg",
+        "rSeasons": "Summer"
+      },
+      {
+        "itemName": "Watermelon Salad",
+        "itemPrice": "300RS",
+        "itemImgLoc": "../images/foodimages/salads/WatermelonSalad.jpeg",
+        "rSeasons": "Summer"
+      },
+      {
+        "itemName": "Iced Coffee",
+        "itemPrice": "250RS",
+        "itemImgLoc": "../images/foodimages/drinks/IcedCoffee.jpeg",
+        "rSeasons": "Summer"
+      },
+      {
+        "itemName": "Grilled Corn on the Cob",
+        "itemPrice": "180RS",
+        "itemImgLoc": "../images/foodimages/vegetables/GrilledCornOnTheCob.jpeg",
+        "rSeasons": "Summer"
+      },
+      {
+        "itemName": "Tropical Fruit Smoothie",
+        "itemPrice": "350RS",
+        "itemImgLoc": "../images/foodimages/drinks/TropicalFruitSmoothie.jpeg",
+        "rSeasons": "Summer"
+      },
+      {
+        "itemName": "Mango Salsa",
+        "itemPrice": "280RS",
+        "itemImgLoc": "../images/foodimages/sauces/MangoSalsa.jpeg",
+        "rSeasons": "Summer"
+      },
+      {
+        "itemName": "Grilled Chicken Skewers",
+        "itemPrice": "600RS",
+        "itemImgLoc": "../images/foodimages/meat/GrilledChickenSkewers.jpeg",
+        "rSeasons": "Summer"
+      },
+      {
+        "itemName": "Caprese Salad",
+        "itemPrice": "420RS",
+        "itemImgLoc": "../images/foodimages/salads/CapreseSalad.jpeg",
+        "rSeasons": "Summer"
+      },
+      {
+        "itemName": "Cucumber Gazpacho",
+        "itemPrice": "350RS",
+        "itemImgLoc": "../images/foodimages/soups/CucumberGazpacho.jpeg",
+        "rSeasons": "Summer"
+      },
+      {
+        "itemName": "Pakoras",
+        "itemPrice": "220RS",
+        "itemImgLoc": "../images/foodimages/snacks/Pakoras.jpeg",
+        "rSeasons": "Summer"
+      },
+      {
+        "itemName": "Masala Chai",
+        "itemPrice": "150RS",
+        "itemImgLoc": "../images/foodimages/drinks/MasalaChai.jpeg",
+        "rSeasons": "Summer"
+      },
+      {
+        "itemName": "Vegetable Samosa",
+        "itemPrice": "180RS",
+        "itemImgLoc": "../images/foodimages/snacks/VegetableSamosa.jpeg",
+        "rSeasons": "Summer"
+      },
+      {
+        "itemName": "Bhutta (Roasted Corn)",
+        "itemPrice": "100RS",
+        "itemImgLoc": "../images/foodimages/snacks/Bhutta.jpeg",
+        "rSeasons": "Summer"
+      },
+      {
+        "itemName": "Fried Momos",
+        "itemPrice": "280RS",
+        "itemImgLoc": "../images/foodimages/snacks/FriedMomos.jpeg",
+        "rSeasons": "Summer"
+      },
+      {
+        "itemName": "Corn Soup",
+        "itemPrice": "280RS",
+        "itemImgLoc": "../images/foodimages/soups/CornSoup.jpeg",
+        "rSeasons": "Summer"
+      },
+      {
+        "itemName": "Aloo Chop",
+        "itemPrice": "220RS",
+        "itemImgLoc": "../images/foodimages/snacks/AlooChop.jpeg",
+        "rSeasons": "Summer"
+      },
+      {
+        "itemName": "Veggie Pakoras",
+        "itemPrice": "220RS",
+        "itemImgLoc": "../images/foodimages/snacks/VeggiePakoras.jpeg",
+        "rSeasons": "Summer"
+      },
+      {
+        "itemName": "Pumpkin Soup",
+        "itemPrice": "320RS",
+        "itemImgLoc": "../images/foodimages/soups/PumpkinSoup.jpeg",
+        "rSeasons": "Winter"
+      },
+      {
+        "itemName": "Apple Pie",
+        "itemPrice": "500RS",
+        "itemImgLoc": "../images/foodimages/desserts/ApplePie.jpeg",
+        "rSeasons": "Winter"
+      },
+      {
+        "itemName": "Pomegranate Salad",
+        "itemPrice": "350RS",
+        "itemImgLoc": "../images/foodimages/salads/PomegranateSalad.jpeg",
+        "rSeasons": "Winter"
+      },
+      {
+        "itemName": "Butternut Squash Risotto",
+        "itemPrice": "550RS",
+        "itemImgLoc": "../images/foodimages/rice/ButternutSquashRisotto.jpeg",
+        "rSeasons": "Winter"
+      },
+      {
+        "itemName": "Pear Crisp",
+        "itemPrice": "450RS",
+        "itemImgLoc": "../images/foodimages/desserts/PearCrisp.jpeg",
+        "rSeasons": "Winter"
+      },
+      {
+        "itemName": "Roasted Chicken with Veggies",
+        "itemPrice": "650RS",
+        "itemImgLoc": "../images/foodimages/meat/RoastedChickenWithVeggies.jpeg",
+        "rSeasons": "Winter"
+      },
+      {
+        "itemName": "Caramelized Onion Tart",
+        "itemPrice": "420RS",
+        "itemImgLoc": "../images/foodimages/pastries/CaramelizedOnionTart.jpeg",
+        "rSeasons": "Winter"
+      },
+      {
+        "itemName": "Mushroom Risotto",
+        "itemPrice": "500RS",
+        "itemImgLoc": "../images/foodimages/rice/MushroomRisotto.jpeg",
+        "rSeasons": "Winter"
+      },
+      {
+        "itemName": "Hot Chocolate",
+        "itemPrice": "250RS",
+        "itemImgLoc": "../images/foodimages/drinks/HotChocolate.jpeg",
+        "rSeasons": "Winter"
+      },
+      {
+        "itemName": "Gajar ka Halwa",
+        "itemPrice": "350RS",
+        "itemImgLoc": "../images/foodimages/desserts/GajarKaHalwa.jpeg",
+        "rSeasons": "Winter"
+      },
+      {
+        "itemName": "Chicken Pot Pie",
+        "itemPrice": "550RS",
+        "itemImgLoc": "../images/foodimages/pastries/ChickenPotPie.jpeg",
+        "rSeasons": "Winter"
+      },
+      {
+        "itemName": "Roasted Chestnuts",
+        "itemPrice": "180RS",
+        "itemImgLoc": "../images/foodimages/snacks/RoastedChestnuts.jpeg",
+        "rSeasons": "Winter"
+      },
+      {
+        "itemName": "Lamb Stew",
+        "itemPrice": "700RS",
+        "itemImgLoc": "../images/foodimages/soups/LambStew.jpeg",
+        "rSeasons": "Winter"
+      },
+      {
+        "itemName": "Eggnog",
+        "itemPrice": "300RS",
+        "itemImgLoc": "../images/foodimages/drinks/Eggnog.jpeg",
+        "rSeasons": "Winter"
+      },
+      {
+        "itemName": "Chocolate Fondue",
+        "itemPrice": "450RS",
+        "itemImgLoc": "../images/foodimages/desserts/ChocolateFondue.jpeg",
+        "rSeasons": "Winter"
+      },
+      {
+        "itemName": "Cabbage Roll Soup",
+        "itemPrice": "380RS",
+        "itemImgLoc": "../images/foodimages/soups/CabbageRollSoup.jpeg",
+        "rSeasons": "Winter"
+      },
+      {
+        "itemName": "Vegetable Hot Pot",
+        "itemPrice": "450RS",
+        "itemImgLoc": "../images/foodimages/soups/VegetableHotPot.jpeg",
+        "rSeasons": "Winter"
+      },
+      {
+        "itemName": "Winter Salad with Cranberries",
+        "itemPrice": "380RS",
+        "itemImgLoc": "../images/foodimages/salads/WinterSaladWithCranberries.jpeg",
+        "rSeasons": "Winter"
+      },
+      {
+        "itemName": "Cauliflower Soup",
+        "itemPrice": "320RS",
+        "itemImgLoc": "../images/foodimages/soups/CauliflowerSoup.jpeg",
+        "rSeasons": "Winter"
+      },
+      {
+        "itemName": "Chocolate Lava Cake",
+        "itemPrice": "500RS",
+        "itemImgLoc": "../images/foodimages/desserts/ChocolateLavaCake.jpeg",
+        "rSeasons": "Winter"
+      },
+      {
+        "itemName": "Steamed Dumplings (Momo)",
+        "itemPrice": "280RS",
+        "itemImgLoc": "../images/foodimages/snacks/SteamedDumplingsMomo.jpeg",
+        "rSeasons": "Winter"
+      },
+      {
+        "itemName": "Tomato Basil Bruschetta",
+        "itemPrice": "280RS",
+        "itemImgLoc": "../images/foodimages/snacks/TomatoBasilBruschetta.jpeg",
+        "rSeasons": "Winter"
+      },
+      {
+        "itemName": "Creamy Potato Leek Soup",
+        "itemPrice": "350RS",
+        "itemImgLoc": "../images/foodimages/soups/CreamyPotatoLeekSoup.jpeg",
+        "rSeasons": "Winter"
+      },
+      {
+        "itemName": "Roasted Turkey",
+        "itemPrice": "900RS",
+        "itemImgLoc": "../images/foodimages/meat/RoastedTurkey.jpeg",
+        "rSeasons": "Winter"
+      }
+    ]
+  

@@ -14,7 +14,7 @@ mongoose.connect(mongoURI, {
   useUnifiedTopology: true,
 });
 
-// data for foods database)
+//data for foods database)
 
 
 //check connection
