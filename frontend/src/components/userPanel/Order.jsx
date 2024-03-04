@@ -56,9 +56,12 @@ function Order() {
 
                     {a.items.map((item, i) => {
 
-                      totalitems+=item.count
-                      totalPrice+=item.count*(item.food!==null?item.food.itemPrice:0)
-                      if (item.food !== null) {
+                      totalitems += item.count
+                      const price =
+                        item.food && item.food.itemPrice
+                          ? Number(item.food.itemPrice.match(/\d+/)[0])
+                          : 0;
+                      totalPrice += item.count * price; if (item.food !== null) {
                         return (
                           <tr key={item._id}>
                             <td className='border px-1' style={{ "width": "30px" }}>{i + 1}</td>
@@ -84,6 +87,8 @@ function Order() {
                 <div className='p-2' style={{ "width": "fit-content" }}>
                   <h4 >status</h4>
                   <h3 >{a.state}</h3>
+                  <h3 >{a.status}</h3>
+
                 </div>
               </div>
             )

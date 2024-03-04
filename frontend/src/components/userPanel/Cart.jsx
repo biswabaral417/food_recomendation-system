@@ -7,8 +7,15 @@ export default function Cart() {
     const { mode, ucart, EmptyCart, order, viewData, addToCart } = useContext(CombinedContext);
 
     let totalitems = ucart.reduce((total, item) => total + item.count, 0);
-    let totalprice = ucart.reduce((total, item) => total + Number(item.fooditem.itemPrice) * item.count, 0);
-    const cartItemCounts = ucart.reduce((counts, item) => {
+    let totalprice = ucart.reduce((total, item) => {
+        // Extract the numerical part of the item price string and convert it to a number
+        const itemPrice = parseFloat(item.fooditem.itemPrice.match(/\d+(\.\d+)?/)[0]);
+        // Calculate the total cost of the item (price * quantity)
+        const itemTotal = itemPrice * item.count;
+        // Add the item total to the running total
+        return total + itemTotal;
+      }, 0);
+          const cartItemCounts = ucart.reduce((counts, item) => {
         counts[item.itemName] = (counts[item.itemName] || 0) + 1;
         return counts;
     }, {});
@@ -33,7 +40,7 @@ export default function Cart() {
                                 <tr key={i}>
                                     <td className='border px-1'>{i + 1}</td>
                                     <td className='border px-1'>{item.fooditem.itemName}</td>
-                                    <td className='border px-1'>{item.fooditem.itemPrice} RS</td>
+                                    <td className='border px-1'>{item.fooditem.itemPrice} </td>
                                     <td className='border px-1'>{item.count}</td>
                                 </tr>
                             ))}

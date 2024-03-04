@@ -19,7 +19,7 @@ export default function Card({ food, mode, viewData, addToCart }) {
             <img className='f-i-img rounded-top' src={food.itemImgLoc} alt="" />
             <div className={`bg-${mode} rounded-bottom border`} >
                 <h6 className='text-center my-1'>{food.itemName}</h6>
-                <h6 className='f-i-price text-center my-1'>{food.itemPrice} RS</h6>
+                <h6 className='f-i-price text-center my-1'>{food.itemPrice}</h6>
                 <button className='btn btn-primary' onClick={() => viewData(food)}>view item</button>
                 <button onClick={() => addToCart(food)} className='btn btn-primary my-1'>
                     add to cart
