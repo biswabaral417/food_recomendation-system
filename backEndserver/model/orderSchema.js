@@ -15,10 +15,6 @@ const itemSchema = new mongoose.Schema({
     
 })
 
-
-
-
-
 const orderSchema = new mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
@@ -28,8 +24,12 @@ const orderSchema = new mongoose.Schema({
     items: [itemSchema] ,
     state: {
         type: String,
-        enum: ['ordered', 'approved', 'onRoute', 'paid'],
+        enum: ['ordered', 'approved', 'onRoute'],
         default: 'ordered'
+    },
+    status:{
+        type:String,
+        enum:["redirected","pending","paid","failed"]
     },
     OrderedTime: {
         type: Date,
@@ -38,6 +38,10 @@ const orderSchema = new mongoose.Schema({
     DeliveredTime: {
         type: Date,
         default: null
+    },
+    amount:{
+        type:Number
+
     }
 });
 

@@ -16,7 +16,6 @@ router.use(express.json())
 router.post('/api/register', async (req, res) => {
     const { userName, userPhone, userEmail, userPassword, userConfirmPassword, userLocation } = req.body //es6 prop object destructuring ir userName=req.body.userName to {userNAme}=req.body
     if (!userName || !userPhone || !userEmail || !userPassword || !userConfirmPassword || !userLocation) {
-        console.log(req.body)
         return res.status(422).json({ error: "enter all credintials" })
     }
     else {
@@ -57,7 +56,6 @@ router.post('/api/register', async (req, res) => {
 
 router.post("/api/login", async (req, res) => {
     const { userEmail, userPassword } = req.body
-    console.log(req.body);
     if (!userEmail || !userPassword) {
         return res.status(422).json({ error: "please enter email and passoword" })
     } else {
@@ -65,10 +63,9 @@ router.post("/api/login", async (req, res) => {
         try {
             const Verify = await UserData.findOne({ userEmail: userEmail })
 
-            console.log(jwt.verify)
             if (Verify && await bcrypt.compare(userPassword, Verify.userPassword)) {
                 const token = await Verify.generateAuthtoken();
-                console.log(token);
+                console.log(token)
                 res.cookie("jwtoken", token, {
                     expires: new Date(Date.now() + 2630000000),
                     httpsOnly: true,
@@ -80,7 +77,6 @@ router.post("/api/login", async (req, res) => {
             else {
                 res.status(422).json({ error: "given credentials are incorrect" })
             }
-
         } catch (error) {
             console.log(error);
 

@@ -1,0 +1,20 @@
+Object { amount: 280, 
+failure_url: "https://localhost:9000/api/failure",
+ product_delivery_charge: "0",
+  product_service_charge: "0", product_code: "EPAYTEST", 
+  signature: "uTRAxl78dt+3K1yItBNmiBS8UbAvOY8I/cezfMsdmRw=",
+   signed_field_names: "total_amount,transaction_uuid,product_code",
+    success_url: "https://localhost:9000/api/esewa/sucess",
+     tax_amount: "0", total_amount: 280, … }
+     
+main.d1728bc27df0790fbd54.hot-update.js:102:13
+POST
+https://esewa.com.np/api/epay/main/v2/form
+[HTTP/1.1 400  56ms]
+
+Some cookies are misusing the recommended “SameSite“ attribute 2
+GET
+https://esewa.com.np/favicon.ico
+CSP
+
+Content-Security-Policy: The page’s settings blocked the loading of a resource at https://esewa.com.np/favicon.ico (“default-src”). 2 FaviconLoader.jsm:180:19

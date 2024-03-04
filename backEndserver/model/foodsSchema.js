@@ -7,7 +7,7 @@ const foodSchema=new mongoose.Schema({
         require:true
     },
     itemPrice:{
-        type:Number,
+        type:String,
         require:true 
     },
     itemImgLoc:{
@@ -18,10 +18,7 @@ const foodSchema=new mongoose.Schema({
         type:String,
         require:true 
     },
-    cook:{
-        type:String,
-        require:true
-    }
+   
 
 });
 const foodItems=mongoose.model('foodItems',foodSchema);

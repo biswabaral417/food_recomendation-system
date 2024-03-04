@@ -19,39 +19,6 @@ router.get('/api/foodsdata', async (req, res) => {
 })
 
 
-router.post('/api/order', authenticate, async (req, res) => {
-    try {
-        const dt = new Date() + 20700000
-        console.log(dt)
-        const items = req.body;
-        const user = req.rootUser;
-
-
-        let foodarray = [];
-        await Promise.all(items.map(async item => {
-            const foodItem = await foodItems.findOne({ _id: item.fooditem._id });
-            const count = item.count;
-            foodarray.push({ food: foodItem, count: count })
-        }));
-
-
-        console.log(foodarray)
-        const newOrder = new Order({
-            user: user,
-            items: foodarray
-        });
-
-        const savedOrder = await newOrder.save();
-        if (savedOrder) {
-            res.status(200).json({ success: "order placed" })
-        }
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: 'An error occurred while saving the order.' });
-    }
-});
-
-
 
 
 router.get('/api/admins/getOrders', authenticate, async (req, res) => {
@@ -97,8 +64,6 @@ router.post('/api/admins/ApproveOrders', authenticate, async (req, res) => {
         return
     }
 })
-
-
 
 
 
